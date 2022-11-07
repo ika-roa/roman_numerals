@@ -1,2 +1,2 @@
-def calculate_roman_numeral(i):
-    return i * "I"
+def to_roman(number):
+    return number * "I"
