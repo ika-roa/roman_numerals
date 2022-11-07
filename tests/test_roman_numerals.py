@@ -8,3 +8,7 @@ class TestCalculateRomanNumeral(unittest.TestCase):
     def test_calculate_roman_num_for_1(self):
         result = "I"
         assert calculate_roman_numeral(1) == result
+
+    def test_calculate_roman_num_for_2(self):
+        result = "II"
+        assert calculate_roman_numeral(1) == result
