@@ -12,3 +12,7 @@ class TestCalculateRomanNumeral(unittest.TestCase):
     def test_calculate_roman_num_for_2(self):
         result = "II"
         assert calculate_roman_numeral(2) == result
+
+    def test_calculate_roman_num_for_3(self):
+        result = "III"
+        assert calculate_roman_numeral(3) == result
