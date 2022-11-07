@@ -1,4 +1,5 @@
 def to_roman(number):
     result = ""
-    result += number * "I"
+    for i in range(number):
+        result += "I"
     return result
