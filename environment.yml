@@ -1,0 +1,23 @@
+name: kata
+channels:
+  - defaults
+  - conda-forge
+  
+dependencies:
+  - python
+  - pip
+  # BASICS
+  - numpy
+  - pandas
+  - ipython
+  # VISUALIZATION
+  - matplotlib
+  # OTHER TOOLS
+  - pip:
+     # - -e .  # install git checkout of my_test_project in editable mode
+     # add here only pip-packages that are not available in conda/conda-forge!
+
+  # DEVELOPMENT ONLY PACKAGES (could also be kept in a separate environment file)
+  - jupyterlab
+  - pytest
+  
