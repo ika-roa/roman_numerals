@@ -2,7 +2,7 @@ def to_roman(number):
     result = ""
     remaining = number
 
-    if remaining == 9:
+    if remaining >= 9:
         result += "IX"
         remaining -= 9
 
@@ -10,9 +10,11 @@ def to_roman(number):
         result += "V"
         remaining -= 5
 
-    if remaining == 4:
+    if remaining >= 4:
         result += "IV"
-    else:
-        for i in range(remaining):
-            result += "I"
+        remaining -= 4
+
+    for i in range(remaining):
+        result += "I"
+
     return result
