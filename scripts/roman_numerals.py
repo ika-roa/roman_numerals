@@ -18,3 +18,7 @@ def to_roman(number):
         result += "I"
 
     return result
+
+
+if __name__ == "__main__":
+    print(to_roman(9))
