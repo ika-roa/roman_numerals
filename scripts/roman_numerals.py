@@ -1,13 +1,13 @@
 def to_roman(number):
     result = ""
+    remaining = number
 
-    if number == 6:
-        result += "VI"
-    elif number == 5:
+    if remaining >= 5:
         result += "V"
-    elif number == 4:
+        remaining -= 5
+    if remaining == 4:
         result += "IV"
     else:
-        for i in range(number):
+        for i in range(remaining):
             result += "I"
     return result
