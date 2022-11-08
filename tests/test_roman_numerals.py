@@ -28,3 +28,15 @@ class TestToRoman(unittest.TestCase):
     def test_to_roman_for_6(self):
         result = "VI"
         assert to_roman(6) == result
+
+    def test_to_roman_for_7(self):
+        result = "VII"
+        assert to_roman(7) == result
+
+    def test_to_roman_for_8(self):
+        result = "VIII"
+        assert to_roman(8) == result
+
+    def test_to_roman_for_9(self):
+        result = "IX"
+        assert to_roman(9) == result
