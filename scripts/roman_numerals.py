@@ -3,20 +3,25 @@ def to_roman(number):
     remaining = number
 
     if remaining >= 9:
-        result += "IX"
+        result = append_digit(result, "IX")
         remaining -= 9
 
     if remaining >= 5:
-        result += "V"
+        result = append_digit(result, "V")
         remaining -= 5
 
     if remaining >= 4:
-        result += "IV"
+        result = append_digit(result, "IV")
         remaining -= 4
 
     for i in range(remaining):
-        result += "I"
+        result = append_digit(result, "I")
 
+    return result
+
+
+def append_digit(result, roman_digit):
+    result += roman_digit
     return result
 
 
