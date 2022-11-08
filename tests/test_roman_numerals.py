@@ -24,3 +24,7 @@ class TestToRoman(unittest.TestCase):
     def test_to_roman_for_5(self):
         result = "V"
         assert to_roman(5) == result
+
+    def test_to_roman_for_6(self):
+        result = "VI"
+        assert to_roman(6) == result
