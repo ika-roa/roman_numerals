@@ -68,3 +68,7 @@ def test_to_roman_valid_numbers(test_input, expected):
 def test_to_roman_for_0():
     with pytest.raises(ValueError):
         to_roman(0)
+
+def test_to_roman_for_negative_number():
+    with pytest.raises(ValueError):
+        to_roman(-5)
