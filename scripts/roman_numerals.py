@@ -17,6 +17,9 @@ def to_roman(number):
     result = ""
     remaining = number
 
+    if number == 0:
+        raise ValueError("Romans did not know the number 0.")
+
     for arabic_digit, roman_digit in ROMAN_DIGITS:
         while remaining >= arabic_digit:
             result = append_digit(result, roman_digit)
