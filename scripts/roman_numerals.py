@@ -14,6 +14,9 @@ ROMAN_DIGITS = ((1000, 'M'),
 
 
 def to_roman(number):
+    if not isinstance(number, int):
+        raise TypeError("Only integer numbers can be converted to Roman numerals")
+
     result = ""
     remaining = number
 
@@ -43,4 +46,4 @@ def reduce_number_by_found_digit(remaining, arabic_digit):
 
 
 if __name__ == "__main__":
-    print(to_roman(9))
+    print(to_roman(2.3))

@@ -69,10 +69,18 @@ def test_to_roman_for_0():
     with pytest.raises(ValueError):
         to_roman(0)
 
+
 def test_to_roman_for_negative_number():
     with pytest.raises(ValueError):
         to_roman(-5)
 
+
 def test_to_roman_for_too_big_number():
     with pytest.raises(ValueError):
         to_roman(5000)
+
+
+def test_to_roman_for_invalid_input():
+    with pytest.raises(TypeError):
+        to_roman("A")
+
