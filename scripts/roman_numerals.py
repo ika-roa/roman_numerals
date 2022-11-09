@@ -17,6 +17,8 @@ def to_roman(number):
     result = ""
     remaining = number
 
+    if number < 0:
+        raise ValueError("Romans did not know negative numbers.")
     if number == 0:
         raise ValueError("Romans did not know the number 0.")
 
