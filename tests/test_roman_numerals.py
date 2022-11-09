@@ -61,5 +61,9 @@ KNOWN_VALUES = ((1, 'I'),
 
 
 @pytest.mark.parametrize("test_input, expected", KNOWN_VALUES)
-def test_to_roman(test_input, expected):
+def test_to_roman_valid_numbers(test_input, expected):
     assert to_roman(test_input) == expected
+
+def test_to_roman_for_0():
+    with pytest.raises(ValueError):
+        to_roman(0)
