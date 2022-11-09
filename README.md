@@ -13,7 +13,7 @@
     - Write no more production code than necessary to pass the one failing unit test.
 - Make code really beautiful and highly readable.
 
-## Additional requirements
+## New requirements
 - Implement reverse function as well: roman to normal integer
 - Make code object-oriented
 - Implement addition and subtraction methods
