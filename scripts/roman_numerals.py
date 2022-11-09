@@ -19,13 +19,15 @@ def to_roman(number):
 
     if number < 0:
         raise ValueError("Romans did not know negative numbers.")
-    if number == 0:
+    elif number == 0:
         raise ValueError("Romans did not know the number 0.")
-
-    for arabic_digit, roman_digit in ROMAN_DIGITS:
-        while remaining >= arabic_digit:
-            result = append_digit(result, roman_digit)
-            remaining = reduce_number_by_found_digit(remaining, arabic_digit)
+    elif number > 3999:
+        raise ValueError("This number is too big to convert.")
+    else:
+        for arabic_digit, roman_digit in ROMAN_DIGITS:
+            while remaining >= arabic_digit:
+                result = append_digit(result, roman_digit)
+                remaining = reduce_number_by_found_digit(remaining, arabic_digit)
 
     return result
 

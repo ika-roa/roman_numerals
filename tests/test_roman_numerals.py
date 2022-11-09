@@ -72,7 +72,7 @@ def test_to_roman_for_0():
 def test_to_roman_for_negative_number():
     with pytest.raises(ValueError):
         to_roman(-5)
-        
+
 def test_to_roman_for_too_big_number():
     with pytest.raises(ValueError):
         to_roman(5000)
