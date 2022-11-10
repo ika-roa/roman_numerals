@@ -16,6 +16,7 @@
 ## New requirements
 - Implement reverse function as well: roman to normal integer
 - Make code object-oriented
+- Check validity of inputs
 - Implement addition and subtraction methods
 
 ## Link
