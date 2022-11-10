@@ -14,10 +14,9 @@
 - Make code really beautiful and highly readable.
 
 ## New requirements
-- Implement reverse function as well: roman to normal integer
-- Make code object-oriented
-- Check validity of inputs
-- Implement addition and subtraction methods
+- Implement reverse function as well: roman to normal integer.
+- Make code object-oriented.
+- Check validity of inputs.
 
 ## Link
 https://codingdojo.org/kata/RomanNumerals/
