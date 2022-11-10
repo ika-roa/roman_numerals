@@ -50,4 +50,4 @@ def reduce_number_by_found_digit(remaining, arabic_digit):
 
 
 if __name__ == "__main__":
-    print(to_roman(2.3))
+    print(to_roman(2))
