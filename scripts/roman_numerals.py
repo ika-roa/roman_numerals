@@ -17,9 +17,11 @@ class RomanNumeral:
 
     def __init__(self, number):
         if isinstance(number, int):
-            self.number = number
+            self.int_number = number
+            self.roman_number = self.to_roman(number)
         elif isinstance(number, str):
-            self.number = self.to_int(number)
+            self.int_number = self.to_int(number)
+            self.roman_number = number
         else:
             raise TypeError("Please enter a roman number or an integer.")
 
@@ -27,12 +29,10 @@ class RomanNumeral:
         result = ""
         if self.input_is_valid_int(number):
             remaining = number
-
             for arabic_digit, roman_digit in ROMAN_DIGITS:
                 while remaining >= arabic_digit:
                     result = self.append_digit(result, roman_digit)
                     remaining = self.reduce_number_by_found_digit(remaining, arabic_digit)
-
         return result
 
     def to_int(self, roman_number):
@@ -43,7 +43,6 @@ class RomanNumeral:
                     if roman_number.startswith(roman_digit):
                         result += arabic_digit
                         roman_number = roman_number.replace(roman_digit, "", 1)
-
         return result
 
     def input_is_valid_int(self, number):
@@ -97,4 +96,4 @@ class RomanNumeral:
 
 
 if __name__ == "__main__":
-    print(RomanNumeral("MCV").number)
+    print(RomanNumeral(9).roman_number)
