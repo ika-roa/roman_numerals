@@ -88,3 +88,7 @@ class TestToInt:
     def test_valid_numbers_are_converted_correctly(self, test_input, expected):
         assert RomanNumeral().to_int(test_input) == expected
 
+    def test_more_than_3_repeats(self):
+        with pytest.raises(ValueError):
+            RomanNumeral().to_int("IIII")
+
