@@ -26,6 +26,9 @@ class RomanNumeral:
 
         return result
 
+    def to_int(self, roman_number):
+        return 1
+
     def input_is_valid(self, number):
         if not isinstance(number, int):
             raise TypeError("Only integer numbers can be converted to Roman numerals")
