@@ -1,5 +1,5 @@
 import pytest
-from scripts.roman_numerals import to_roman
+from scripts.roman_numerals import RomanNumeral
 
 KNOWN_VALUES = ((1, 'I'),
                 (2, 'II'),
@@ -60,24 +60,24 @@ KNOWN_VALUES = ((1, 'I'),
                 )
 
 
-class TestRomanNumerals:
+class TestToRoman:
     @pytest.mark.parametrize("test_input, expected", KNOWN_VALUES)
-    def test_to_roman_valid_numbers(self, test_input, expected):
-        assert to_roman(test_input) == expected
+    def test_valid_numbers(self, test_input, expected):
+        assert RomanNumeral.to_roman(test_input) == expected
 
     def test_to_roman_for_0(self):
         with pytest.raises(ValueError):
-            to_roman(0)
+            RomanNumeral.to_roman(0)
 
     def test_to_roman_for_negative_number(self):
         with pytest.raises(ValueError):
-            to_roman(-5)
+            RomanNumeral.to_roman(-5)
 
     def test_to_roman_for_too_big_number(self):
         with pytest.raises(ValueError):
-            to_roman(5000)
+            RomanNumeral.to_roman(5000)
 
     def test_to_roman_for_invalid_input(self):
         with pytest.raises(TypeError):
-            to_roman("A")
+            RomanNumeral.to_roman("A")
 
