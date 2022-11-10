@@ -62,22 +62,22 @@ KNOWN_VALUES = ((1, 'I'),
 
 class TestToRoman:
     @pytest.mark.parametrize("test_input, expected", KNOWN_VALUES)
-    def test_valid_numbers(self, test_input, expected):
+    def test_valid_numbers_are_converted_correctly(self, test_input, expected):
         assert RomanNumeral().to_roman(test_input) == expected
 
-    def test_to_roman_for_0(self):
+    def test_0_as_input_throws_value_error(self):
         with pytest.raises(ValueError):
             RomanNumeral().to_roman(0)
 
-    def test_to_roman_for_negative_number(self):
+    def test_negative_number_as_input_throws_value_error(self):
         with pytest.raises(ValueError):
             RomanNumeral().to_roman(-5)
 
-    def test_to_roman_for_too_big_number(self):
+    def test_too_big_number_as_input_throws_value_error(self):
         with pytest.raises(ValueError):
             RomanNumeral().to_roman(5000)
 
-    def test_to_roman_for_invalid_input(self):
+    def test_invalid_input_throws_type_error(self):
         with pytest.raises(TypeError):
             RomanNumeral().to_roman("A")
 
