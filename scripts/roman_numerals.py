@@ -14,6 +14,15 @@ ROMAN_DIGITS = ((1000, 'M'),
 
 
 class RomanNumeral:
+
+    def __init__(self, number):
+        if isinstance(number, int):
+            self.number = number
+        elif isinstance(number, str):
+            self.number = self.to_int(number)
+        else:
+            raise TypeError("Please enter a roman number or an integer.")
+
     def to_roman(self, number):
         result = ""
         if self.input_is_valid_int(number):
@@ -88,4 +97,4 @@ class RomanNumeral:
 
 
 if __name__ == "__main__":
-    print(RomanNumeral().to_int(roman_number="CVCXDFIII"))
+    print(RomanNumeral("MCV").number)
