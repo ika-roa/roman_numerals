@@ -89,4 +89,4 @@ class RomanNumeral:
 
 
 if __name__ == "__main__":
-    print(RomanNumeral("G").roman_number)
+    print(RomanNumeral(0))

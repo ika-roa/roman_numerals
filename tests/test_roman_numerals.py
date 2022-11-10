@@ -67,15 +67,15 @@ class TestToRoman:
 
     def test_0_as_input_throws_value_error(self):
         with pytest.raises(ValueError):
-            RomanNumeral(0).roman_number
+            RomanNumeral(0)
 
     def test_negative_number_as_input_throws_value_error(self):
         with pytest.raises(ValueError):
-            RomanNumeral(-5).roman_number
+            RomanNumeral(-5)
 
     def test_too_big_number_as_input_throws_value_error(self):
         with pytest.raises(ValueError):
-            RomanNumeral(5000).roman_number
+            RomanNumeral(5000)
 
     def test_invalid_input_throws_type_error(self):
         with pytest.raises(TypeError):
@@ -90,8 +90,8 @@ class TestToInt:
 
     def test_more_than_3_repeats_raises_type_error(self):
         with pytest.raises(TypeError):
-            RomanNumeral("IIII").int_number
+            RomanNumeral("IIII")
 
     def test_wrong_letter_raises_type_error(self):
         with pytest.raises(TypeError):
-            RomanNumeral("IIB").int_number
+            RomanNumeral("IIB")
