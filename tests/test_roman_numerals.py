@@ -63,36 +63,35 @@ KNOWN_VALUES = ((1, 'I'),
 class TestToRoman:
     @pytest.mark.parametrize("test_input, expected", KNOWN_VALUES)
     def test_valid_numbers_are_converted_correctly(self, test_input, expected):
-        assert RomanNumeral().to_roman(test_input) == expected
+        assert RomanNumeral(test_input).roman_number == expected
 
     def test_0_as_input_throws_value_error(self):
         with pytest.raises(ValueError):
-            RomanNumeral().to_roman(0)
+            RomanNumeral(0).roman_number
 
     def test_negative_number_as_input_throws_value_error(self):
         with pytest.raises(ValueError):
-            RomanNumeral().to_roman(-5)
+            RomanNumeral(-5).roman_number
 
     def test_too_big_number_as_input_throws_value_error(self):
         with pytest.raises(ValueError):
-            RomanNumeral().to_roman(5000)
+            RomanNumeral(5000).roman_number
 
     def test_invalid_input_throws_type_error(self):
         with pytest.raises(TypeError):
-            RomanNumeral().to_roman("A")
+            RomanNumeral("A").to_roman("A")
 
 
 class TestToInt:
 
     @pytest.mark.parametrize("expected, test_input", KNOWN_VALUES)
     def test_valid_numbers_are_converted_correctly(self, test_input, expected):
-        assert RomanNumeral().to_int(test_input) == expected
+        assert RomanNumeral(test_input).int_number == expected
 
     def test_more_than_3_repeats_raises_type_error(self):
         with pytest.raises(TypeError):
-            RomanNumeral().to_int("IIII")
+            RomanNumeral("IIII").int_number
 
     def test_wrong_letter_raises_type_error(self):
         with pytest.raises(TypeError):
-            RomanNumeral().to_int("IIB")
-
+            RomanNumeral("IIB").int_number
