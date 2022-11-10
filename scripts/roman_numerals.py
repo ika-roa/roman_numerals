@@ -36,16 +36,6 @@ class RomanNumeral:
                     remaining -= arabic_digit
         return result
 
-    def to_int(self, roman_number):
-        result = 0
-        if self.input_is_valid_roman(roman_number):
-            while len(roman_number) > 0:
-                for arabic_digit, roman_digit in ROMAN_DIGITS:
-                    if roman_number.startswith(roman_digit):
-                        result += arabic_digit
-                        roman_number = roman_number.replace(roman_digit, "", 1)
-        return result
-
     def input_is_valid_int(self, number):
         if not isinstance(number, int):
             raise TypeError("Only integer numbers can be converted to Roman numerals")
@@ -57,6 +47,16 @@ class RomanNumeral:
             raise ValueError("This number is too big to convert.")
         else:
             return True
+
+    def to_int(self, roman_number):
+        result = 0
+        if self.input_is_valid_roman(roman_number):
+            while len(roman_number) > 0:
+                for arabic_digit, roman_digit in ROMAN_DIGITS:
+                    if roman_number.startswith(roman_digit):
+                        result += arabic_digit
+                        roman_number = roman_number.replace(roman_digit, "", 1)
+        return result
 
     def input_is_valid_roman(self, roman_number):
         if self.more_than_three_same_letters_in_a_row(roman_number):
@@ -86,7 +86,6 @@ class RomanNumeral:
             return True
         else:
             return False
-
 
 
 if __name__ == "__main__":
