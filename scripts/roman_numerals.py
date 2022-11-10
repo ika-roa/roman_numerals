@@ -18,17 +18,18 @@ class RomanNumeral:
     def __init__(self, number):
         if isinstance(number, int):
             self.int_number = number
-            self.roman_number = self.to_roman(number)
+            self.roman_number = self.to_roman(self.int_number)
         elif isinstance(number, str):
-            self.int_number = self.to_int(number)
             self.roman_number = number
+            self.int_number = self.to_int(self.roman_number)
+
         else:
             raise TypeError("Please enter a roman number or an integer.")
 
-    def to_roman(self, number):
+    def to_roman(self, int_number):
         result = ""
-        if self.input_is_valid_int(number):
-            remaining = number
+        if self.input_is_valid_int(int_number):
+            remaining = int_number
             for arabic_digit, roman_digit in ROMAN_DIGITS:
                 while remaining >= arabic_digit:
                     result = self.append_digit(result, roman_digit)
@@ -96,4 +97,4 @@ class RomanNumeral:
 
 
 if __name__ == "__main__":
-    print(RomanNumeral(9).roman_number)
+    print(RomanNumeral("G").roman_number)
