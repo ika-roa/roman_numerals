@@ -32,8 +32,8 @@ class RomanNumeral:
             remaining = int_number
             for arabic_digit, roman_digit in ROMAN_DIGITS:
                 while remaining >= arabic_digit:
-                    result = self.append_digit(result, roman_digit)
-                    remaining = self.reduce_number_by_found_digit(remaining, arabic_digit)
+                    result += roman_digit
+                    remaining -= arabic_digit
         return result
 
     def to_int(self, roman_number):
@@ -87,13 +87,6 @@ class RomanNumeral:
         else:
             return False
 
-    def append_digit(self, result, roman_digit):
-        result += roman_digit
-        return result
-
-    def reduce_number_by_found_digit(self, remaining, arabic_digit):
-        remaining -= arabic_digit
-        return remaining
 
 
 if __name__ == "__main__":
