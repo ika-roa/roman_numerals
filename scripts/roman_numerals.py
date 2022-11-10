@@ -24,10 +24,21 @@ class RomanNumeral:
                     result = self.append_digit(result, roman_digit)
                     remaining = self.reduce_number_by_found_digit(remaining, arabic_digit)
 
+
         return result
 
     def to_int(self, roman_number):
-        return 1
+        result = 0
+
+        while len(roman_number) > 0:
+            for arabic_digit, roman_digit in ROMAN_DIGITS:
+                if roman_number.startswith(roman_digit):
+                    print(f"result = {result}")
+                    print(f"roman = {roman_number}")
+                    result += arabic_digit
+                    roman_number = roman_number.replace(roman_digit, "", 1)
+
+        return result
 
     def input_is_valid(self, number):
         if not isinstance(number, int):
@@ -51,4 +62,4 @@ class RomanNumeral:
 
 
 if __name__ == "__main__":
-    print(RomanNumeral().to_roman(number=2))
+    print(RomanNumeral().to_int(roman_number="MCX"))
