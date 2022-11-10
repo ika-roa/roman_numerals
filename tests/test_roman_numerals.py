@@ -81,3 +81,10 @@ class TestToRoman:
         with pytest.raises(TypeError):
             RomanNumeral().to_roman("A")
 
+
+class TestToInt:
+
+    @pytest.mark.parametrize("expected, test_input", KNOWN_VALUES)
+    def test_valid_numbers_are_converted_correctly(self, test_input, expected):
+        assert RomanNumeral().to_int(test_input) == expected
+
