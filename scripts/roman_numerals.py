@@ -55,11 +55,16 @@ class RomanNumeral:
         for char in roman_number:
             if char == last_char:
                 counter += 1
+                if counter > 2:
+                    raise TypeError("This is not a Roman number, the same letter appears more than 3 times in a row.")
+
             else:
                 counter = 0
             last_char = char
-        if counter > 2:
-            raise TypeError("This is not a Roman number, the same letter appears more than 3 times in a row.")
+        if [char for char in roman_number if char not in [roman_digit for _, roman_digit in ROMAN_DIGITS]]:
+
+            raise TypeError("There is a wrong letter in the Roman number.")
+
         else:
             return True
 
@@ -73,4 +78,4 @@ class RomanNumeral:
 
 
 if __name__ == "__main__":
-    print(RomanNumeral().to_int(roman_number="M"))
+    print(RomanNumeral().to_int(roman_number="CVCXDFIII"))
