@@ -52,11 +52,8 @@ class RomanNumeral:
     def input_is_valid_roman(self, roman_number):
         if self.more_than_three_same_letters_in_a_row(roman_number):
             raise TypeError("This is not a Roman number, the same letter appears more than 3 times in a row.")
-
-        elif [char for char in roman_number if char not in [roman_digit for _, roman_digit in ROMAN_DIGITS]]:
-
+        elif self.wrong_letter_in(roman_number):
             raise TypeError("There is a wrong letter in the Roman number.")
-
         else:
             return True
 
@@ -72,6 +69,14 @@ class RomanNumeral:
                 counter = 0
             last_char = char
         return False
+
+    def wrong_letter_in(self, roman_number):
+        roman_digits = [roman_digit for _, roman_digit in ROMAN_DIGITS]
+        wrong_letters = [char for char in roman_number if char not in roman_digits]
+        if wrong_letters:
+            return True
+        else:
+            return False
 
     def append_digit(self, result, roman_digit):
         result += roman_digit
