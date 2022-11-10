@@ -39,10 +39,8 @@ class RomanNumeral:
     def input_is_valid_int(self, number):
         if not isinstance(number, int):
             raise TypeError("Only integer numbers can be converted to Roman numerals")
-        elif number < 0:
-            raise ValueError("Romans did not know negative numbers.")
-        elif number == 0:
-            raise ValueError("Romans did not know the number 0.")
+        elif number <= 0:
+            raise ValueError("Romans did not know 0 or negative numbers.")
         elif number > 3999:
             raise ValueError("This number is too big to convert.")
         else:
